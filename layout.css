@@ -1,0 +1,255 @@
+/************* MOBILE *****************/
+
+/************* Grids *****************/
+.grid_2-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+/************* Burgermenu *****************/
+
+header {
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 20px;
+  z-index: 10;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+  list-style: none;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  display: block;
+  text-decoration: none;
+  transition: color 0.3s;
+  padding: 10px;
+  text-align: end;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: block;
+    background-color: #ffffff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+  }
+
+  nav.active .menu a {
+    font-size: 24px;
+  }
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hide_mobile {
+  display: none;
+}
+
+/************* DESKTOP *****************/
+
+@media (min-width: 800px) {
+  /*************** Menu ****************/
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header .logo a {
+    color: #000000;
+    font-size: medium;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: medium;
+  }
+
+  .menu li {
+    margin-right: 20px;
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
+
+  .menu a {
+    display: block;
+    padding: 10px;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s;
+    text-align: start;
+  }
+
+  .menu a:hover {
+    text-decoration: underline;
+  }
+
+  /************* Mine grids / layout *****************/
+
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .grid_1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .forside_om_side {
+    margin-left: 0;
+  }
+
+  footer {
+    text-align: center;
+    opacity: 30%;
+    margin-top: 7rem;
+  }
+
+  .forside {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    margin-left: 1rem;
+  }
+
+  .forside_h1 {
+    font-size: 20rem;
+    font-weight: lighter;
+  }
+
+  .hero-description {
+    margin-bottom: 1rem; /* juster så teksten flugter med "IO" */
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .hide_logo {
+    display: none;
+  }
+
+  /* Dropdown-menu (skjult som udgangspunkt) */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* lige under "PROJEKTER" */
+    left: 0;
+    background: rgb(255, 255, 255);
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    list-style: none; /* fjern bullets */
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    font-size: 1rem;
+  }
+
+  /* Hover-effekt */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+}
