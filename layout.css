@@ -1,10 +1,93 @@
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img,
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 2rem;
+  filter: none;
+}
+
 /************* MOBILE *****************/
 
-/************* Grids *****************/
-.grid_2-1 {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
+footer {
+  text-align: center;
+  opacity: 30%;
+  margin-top: 7rem;
+}
+
+footer p {
+  font-size: smaller;
+}
+
+/************* Font styling mobile *****************/
+
+.h1_forside {
+  font-family: didot;
+  font-size: 10rem;
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: -0.2em;
+}
+
+h1 {
+  font-family: didot;
+  font-size: 2rem;
+  font-weight: lighter;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+h2 {
+  font-family: didot;
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-family: didot;
+  font-weight: lighter;
+  font-style: italic;
+  margin-top: 3rem;
+  font-size: 1rem;
+}
+
+.oversigt_oversrift {
+  font-family: didot;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: lighter;
+  color: #000000;
+}
+
+p {
+  font-family: didot;
+  line-height: 2;
+  margin-bottom: 2rem;
+}
+
+.p_forside {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+a {
+  font-family: didot;
+  color: #000000;
+  line-height: 2;
+}
+
+.margin_padding_none {
+  margin: 0;
+  padding: 0;
 }
 
 /************* Burgermenu *****************/
@@ -16,6 +99,7 @@ header {
   align-items: center;
   padding-inline: 20px;
   z-index: 10;
+  height: 100px;
 }
 
 .logo img {
@@ -118,7 +202,8 @@ nav {
 
 main {
   max-width: 1200px;
-  margin: 0 auto;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .hide_mobile {
@@ -177,12 +262,37 @@ main {
     text-decoration: underline;
   }
 
-  /************* Mine grids / layout *****************/
+  /************* IMG / VIDEO *****************/
+
+  img,
+  video {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+
+  img:hover,
+  video:hover {
+    filter: grayscale(0%);
+  }
+
+  /************* Mine grids *****************/
+
+  .grid_2-1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+  }
 
   .grid_1-1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+  }
+
+  .grid_1-1_samlet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
   }
 
   .grid_1-1-1 {
@@ -191,14 +301,15 @@ main {
     gap: 10px;
   }
 
-  .forside_om_side {
-    margin-left: 0;
+  /************* Styling *****************/
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  footer {
-    text-align: center;
-    opacity: 30%;
-    margin-top: 7rem;
+  footer p {
+    font-size: medium;
   }
 
   .forside {
@@ -209,19 +320,61 @@ main {
     margin-left: 1rem;
   }
 
-  .forside_h1 {
-    font-size: 20rem;
-    font-weight: lighter;
+  .hide_logo {
+    display: none;
   }
 
-  .hero-description {
-    margin-bottom: 1rem; /* juster så teksten flugter med "IO" */
-    font-size: 0.9rem;
+  .text_position_right {
+    text-align: right;
+  }
+
+  .text_position_center {
     text-align: center;
   }
 
-  .hide_logo {
-    display: none;
+  .video_margin_none {
+    margin-top: 0;
+  }
+
+  .section {
+    margin-top: 3rem;
+  }
+
+  .margin_padding_none {
+    margin: 0;
+    padding: 0;
+  }
+
+  /*************** Font styling *********************/
+
+  h1 {
+    font-size: 4.6rem;
+  }
+
+  .h1_forside {
+    font-size: 18rem;
+    line-height: 0.8;
+    text-align: left;
+    margin: 0;
+  }
+
+  h2 {
+    font-style: italic;
+    font-size: xx-large;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .oversigt_oversrift {
+    font-size: 2rem;
+  }
+
+  .p_forside {
+    margin-bottom: 1rem; /* juster så teksten flugter med "IO" */
+    font-size: 0.9rem;
+    text-align: center;
   }
 
   /* Dropdown-menu (skjult som udgangspunkt) */
@@ -244,7 +397,6 @@ main {
     font-size: 1rem;
   }
 
-  /* Hover-effekt */
   .dropdown:hover .dropdown-menu {
     display: block;
   }
